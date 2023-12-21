@@ -1,0 +1,6 @@
+runtime: nodejs20
+service: default
+
+env_variables:
+  PORT: "8080"
+  MONGODB_URL: mongodb+srv://capstone-crafting:12345@cluster0.d0knz91.mongodb.net/?retryWrites=true&w=majority

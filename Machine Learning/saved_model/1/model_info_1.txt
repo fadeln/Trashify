@@ -1,0 +1,22 @@
+32 batch image
+
+mobilenet_v3 = "https://tfhub.dev/google/imagenet/mobilenet_v3_large_100_224/classification/5"
+
+feature_extractor_model = mobilenet_v3
+
+feature_extractor_layer = hub.KerasLayer(
+    feature_extractor_model,
+    input_shape=(224, 224, 3),
+    trainable=False)
+
+model = tf.keras.Sequential([
+  feature_extractor_layer,
+  tf.keras.layers.Dense(512, activation='relu'),
+  tf.keras.layers.Dropout(0.2),
+  tf.keras.layers.Dense(6,activation='softmax')
+])
+
+model.compile(optimizer='adam',
+                  loss='categorical_crossentropy',
+                  metrics=['accuracy'])
+

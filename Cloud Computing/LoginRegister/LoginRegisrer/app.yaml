@@ -1,0 +1,6 @@
+runtime: nodejs16
+service: backend
+
+env_variables:
+  APP_URL: 'https://PROJECT_ID.REGION_ID.r.appspot.com'
+  MONGO_URL: 'mongodb+srv://netrava:Indonesia45@cluster-1.ntofxpo.mongodb.net/?retryWrites=true&w=majority'
