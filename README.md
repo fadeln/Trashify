@@ -120,9 +120,27 @@ To make the model compatible with Android devices, we convert it into TensorFlow
 - **PATCH /users/:id**: This endpoint is used to update a user with a specific ID. You need to send the authentication token in the request header, ensure that the requester is the account owner, and send the update data in the request body.
 - **GET /logout/:id**: This endpoint is used to log out a user session with a specific ID. You need to send the authentication token in the request header.
 
-## Notes
+## Tutorial
 
-- All the above endpoints require authentication, except for `POST /auth/register` and `POST /auth/login`.
-- To use endpoints that require authentication, you need to send the authentication token in the request header with the format `Authorization: Bearer <token>`.
+To get information about specific crafting materials, use the following endpoint:
+
+- **GET /tutorial/:material**: This endpoint is used to retrieve information about a specific crafting material. Replace `:material` with the desired material type in the URL.
+
+### Material Types:
+
+- Cardboard
+- Glass
+- Metal
+- Plastic
+
+### Example:
+
+- `GET /tutorial/cardboard`
+- `GET /tutorial/glass`
+- `GET /tutorial/metal`
+- `GET /tutorial/plastic`
+
+Note: All the above endpoints require authentication, except for `POST /auth/register` , `POST /auth/login` and `GET /tutorial`. To use endpoints that require authentication, you need to send the authentication token in the request header with the format `Authorization: Bearer <token>`.
+
 
 
