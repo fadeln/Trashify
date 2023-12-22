@@ -6,4 +6,5 @@
     <color name="green_btn1">#86A789</color>
     <color name="green_btn2">#DEEDE0</color>
     <color name="primary">#445D48</color>
+    <color name="bg_splash">#DCEBDD</color>
 </resources>
