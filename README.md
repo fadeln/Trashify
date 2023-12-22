@@ -74,7 +74,7 @@ We already building a Cloud architecture model for Machine Learning and the Appl
 
 
 
-# Machine Learning Trash Classification
+# Machine Learning Part
 
 ## Data Collection
 
@@ -104,5 +104,25 @@ We employ transfer learning using TensorFlow Hub's MobileNet V3 to leverage pre-
 ## Model Conversion
 
 To make the model compatible with Android devices, we convert it into TensorFlow Lite format. This enables the model to be deployed efficiently on mobile devices while maintaining its classification capabilities.
+
+
+# Cloud Computing Part
+
+## Authentication
+
+- **POST /auth/register**: This endpoint is used to register a new user. You need to send user data in the request body.
+- **POST /auth/login**: This endpoint is used to log in as a registered user. You need to send login data in the request body.
+
+## Users
+
+- **GET /users**: This endpoint is used to get all users. You need to send the authentication token in the request header.
+- **DELETE /users/:id**: This endpoint is used to delete a user with a specific ID. You need to send the authentication token in the request header and ensure that the requester is the account owner.
+- **PATCH /users/:id**: This endpoint is used to update a user with a specific ID. You need to send the authentication token in the request header, ensure that the requester is the account owner, and send the update data in the request body.
+- **GET /logout/:id**: This endpoint is used to log out a user session with a specific ID. You need to send the authentication token in the request header.
+
+## Notes
+
+- All the above endpoints require authentication, except for `POST /auth/register` and `POST /auth/login`.
+- To use endpoints that require authentication, you need to send the authentication token in the request header with the format `Authorization: Bearer <token>`.
 
 
